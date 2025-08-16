@@ -43,7 +43,7 @@ function DepositForm({ goals, onMakeDeposit }) {
         </div>
         
         <div className="form-group">
-          <label>Amount ($):</label>
+          <label>Amount (sh.):</label>
           <input 
             type="number" 
             min="0.01" 
