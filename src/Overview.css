@@ -1,0 +1,152 @@
+/* Overview.css */
+.overview-container {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.overview-container h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.summary-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.summary-card p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.urgent-section {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.urgent-section h3 {
+  margin-top: 0;
+  color: #e65100;
+}
+
+.urgent-goals-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.urgent-goal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff8e1;
+  border-radius: 6px;
+}
+
+.urgent-goal .goal-name {
+  font-weight: 500;
+}
+
+.urgent-goal .days-left {
+  color: #e65100;
+  font-weight: 500;
+}
+
+.urgent-goal .remaining {
+  color: #555;
+}
+
+.all-goals-progress {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.all-goals-progress h3 {
+  margin-top: 0;
+}
+
+.all-goals-progress table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.all-goals-progress th,
+.all-goals-progress td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.all-goals-progress th {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.all-goals-progress tr:hover {
+  background-color: #f5f5f5;
+}
+
+.status {
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status.completed {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status.overdue {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.status.urgent {
+  background-color: #fff8e1;
+  color: #e65100;
+}
+
+.status.on-track {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+@media (max-width: 768px) {
+  .summary-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .all-goals-progress table {
+    display: block;
+    overflow-x: auto;
+  }
+}
