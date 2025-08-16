@@ -64,7 +64,7 @@ function Overview({ goals }) {
                   <span className="goal-name">{g.name}</span>
                   <span className="days-left">{daysLeft} day{daysLeft !== 1 ? 's' : ''} left</span>
                   <span className="remaining">
-                    ${(g.targetAmount - g.savedAmount).toLocaleString()} remaining
+                    sh.{(g.targetAmount - g.savedAmount).toLocaleString()} remaining
                   </span>
                 </div>
               );

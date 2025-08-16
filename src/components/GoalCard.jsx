@@ -24,9 +24,9 @@ function GoalCard({ goal, statusInfo, isEditing, onEdit, onSave, onCancel, onDel
           
           <div className="goal-details">
             <div className="amounts">
-              <span>Saved: ${goal.savedAmount.toLocaleString()}</span>
-              <span>Target: ${goal.targetAmount.toLocaleString()}</span>
-              <span>Remaining: ${(goal.targetAmount - goal.savedAmount).toLocaleString()}</span>
+              <span>Saved: sh.{goal.savedAmount.toLocaleString()}</span>
+              <span>Target: sh.{goal.targetAmount.toLocaleString()}</span>
+              <span>Remaining: sh.{(goal.targetAmount - goal.savedAmount).toLocaleString()}</span>
             </div>
             
             <div className="deadline-info">

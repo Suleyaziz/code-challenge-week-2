@@ -52,7 +52,7 @@ function GoalForm({ onAddGoal }) {
         </div>
         
         <div className="form-group">
-          <label>Target Amount ($):</label>
+          <label>Target Amount (sh.):</label>
           <input 
             type="number" 
             min="0.01" 
