@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './DepositForm.css';
 
 function DepositForm({ goals, onMakeDeposit }) {
   // Form state

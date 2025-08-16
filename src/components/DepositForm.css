@@ -1,0 +1,47 @@
+/* DepositForm.css */
+.deposit-form-container {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.deposit-form-container h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.deposit-form-container form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.deposit-form-container button {
+  grid-column: span 2;
+  padding: 0.8rem;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.deposit-form-container button:hover {
+  background-color: #1976d2;
+}
+
+@media (max-width: 768px) {
+  .deposit-form-container form {
+    grid-template-columns: 1fr;
+  }
+  
+  .deposit-form-container button {
+    grid-column: span 1;
+  }
+}
