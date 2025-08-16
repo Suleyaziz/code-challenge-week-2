@@ -1,12 +1,12 @@
 /* Overview.css */
 .overview-container {
   padding: 1.5rem;
-  background-color: #f8f9fa;
+  background-color: #f1f9fa;
   border-radius: 10px;
 }
 
 .overview-container h2 {
-  color: #2c3e50;
+  color: #0976e3;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
   font-weight: 600;
@@ -69,6 +69,7 @@
 }
 
 .urgent-goal .goal-name {
+  color: #2c3e50;
   font-weight: 500;
 }
 
@@ -99,13 +100,14 @@
 
 .all-goals-progress th,
 .all-goals-progress td {
+  color: #0a0202;
   padding: 0.8rem;
   text-align: left;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #0a0202;
 }
 
 .all-goals-progress th {
-  color: #6c757d;
+  color: #5f778b;
   font-weight: 500;
 }
 
@@ -126,17 +128,17 @@
 }
 
 .status.overdue {
-  background-color: #ffebee;
+  background-color: #e897a4;
   color: #c62828;
 }
 
 .status.urgent {
-  background-color: #fff8e1;
+  background-color: #d7a604;
   color: #e65100;
 }
 
 .status.on-track {
-  background-color: #e3f2fd;
+  background-color: #437294;
   color: #1976d2;
 }
 
