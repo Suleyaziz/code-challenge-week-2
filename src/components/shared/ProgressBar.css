@@ -1,0 +1,40 @@
+/* ProgressBar.css */
+.progress-container {
+  height: 20px;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  border-radius: 10px;
+  position: relative;
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Different colors for different statuses */
+.progress-container.urgent .progress-bar {
+  background: linear-gradient(90deg, #FF9800, #FFC107);
+}
+
+.progress-container.overdue .progress-bar {
+  background: linear-gradient(90deg, #F44336, #E91E63);
+}
+
+.progress-container.completed .progress-bar {
+  background: linear-gradient(90deg, #2196F3, #03A9F4);
+}

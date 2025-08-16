@@ -1,6 +1,6 @@
 import React from 'react';
 import ProgressBar from './shared/ProgressBar';
-
+import './Overview.css'; 
 
 function Overview({ goals }) {
   // Calculate statistics
