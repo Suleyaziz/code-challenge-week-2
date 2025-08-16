@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from './shared/ProgressBar';
 import EditForm from './shared/EditForm';
-
+import './GoalCard.css';
 function GoalCard({ goal, statusInfo, isEditing, onEdit, onSave, onCancel, onDelete }) {
   return (
     <div className={`goal-card ${statusInfo.status}`}>

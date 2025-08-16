@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './GoalForm.css';
 // Available categories for dropdown
 const categories = [
   'Travel', 'Emergency', 'Electronics', 
