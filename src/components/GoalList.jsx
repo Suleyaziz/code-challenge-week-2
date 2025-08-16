@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import GoalCard from './GoalCard';
+import './GoalList.css'; // Assuming you have some styles for the goal list
 
 function GoalsList({ goals, onUpdateGoal, onDeleteGoal }) {
   const [editingGoalId, setEditingGoalId] = useState(null);
