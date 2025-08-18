@@ -1,89 +1,96 @@
-import { useState, useEffect } from 'react'; // Import React hooks
-import GoalsList from './components/GoalList'; // Import GoalsList component
-import GoalForm from './components/GoalForm'; // Import GoalForm component
-import DepositForm from './components/DepositForm'; // Import DepositForm component
-import Overview from './components/Overview'; // Import Overview component
-import './App.css'; // Import styles
+import React, { useState, useEffect } from 'react';
+import GoalsList from './components/GoalList';
+import GoalForm from './components/GoalForm';
+import DepositForm from './components/DepositForm';
+import Overview from './components/Overview';
+import './App.css';
 
 function App() {
-  const [goals, setGoals] = useState([]); // State for goals data
-  const [activeTab, setActiveTab] = useState('goals'); // State for active tab
+  // State for goals data and active tab
+  const [goals, setGoals] = useState([]);
+  const [activeTab, setActiveTab] = useState('goals');
 
-  useEffect(() => { // Fetch goals on component mount
-    const fetchGoals = async () => { // Async fetch function
-      try { // Try fetching
-        const response = await fetch('http://localhost:3000/goals'); // API call
-        const data = await response.json(); // Parse response
-        setGoals(data); // Update state
-      } catch (error) { // Catch errors
-        console.error('Error fetching goals:', error); // Log error
+  // Fetch goals from json-server on component mount
+  useEffect(() => {
+    const fetchGoals = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/goals');
+        const data = await response.json();
+        setGoals(data);
+      } catch (error) {
+        console.error('Error fetching goals:', error);
       }
     };
-    fetchGoals(); // Call fetch function
-  }, []); // Empty dependency array (runs once)
+    fetchGoals();
+  }, []);
 
-  const addGoal = async (newGoal) => { // Add new goal
+  // Add a new goal to the server and update state
+  const addGoal = async (newGoal) => {
     try {
-      const response = await fetch('http://localhost:3000/goals', { // POST request
+      const response = await fetch('http://localhost:3000/goals', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newGoal) // Send new goal data
+        body: JSON.stringify(newGoal)
       });
-      const data = await response.json(); // Parse response
-      setGoals([...goals, data]); // Update state
+      const data = await response.json();
+      setGoals([...goals, data]);
     } catch (error) {
-      console.error('Error adding goal:', error); // Log error
+      console.error('Error adding goal:', error);
     }
   };
 
-  const updateGoal = async (updatedGoal) => { // Update existing goal
+  // Update an existing goal
+  const updateGoal = async (updatedGoal) => {
     try {
-      await fetch(`http://localhost:3000/goals/${updatedGoal.id}`, { // PUT request
+      await fetch(`http://localhost:3000/goals/${updatedGoal.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedGoal) // Send updated data
+        body: JSON.stringify(updatedGoal)
       });
-      setGoals(goals.map(g => g.id === updatedGoal.id ? updatedGoal : g)); // Update state
+      setGoals(goals.map(g => g.id === updatedGoal.id ? updatedGoal : g));
     } catch (error) {
-      console.error('Error updating goal:', error); // Log error
+      console.error('Error updating goal:', error);
     }
   };
 
-  const deleteGoal = async (id) => { // Delete goal
+  // Delete a goal
+  const deleteGoal = async (id) => {
     try {
-      await fetch(`http://localhost:3000/goals/${id}`, { method: 'DELETE' }); // DELETE request
-      setGoals(goals.filter(goal => goal.id !== id)); // Update state
+      await fetch(`http://localhost:3000/goals/${id}`, { method: 'DELETE' });
+      setGoals(goals.filter(goal => goal.id !== id));
     } catch (error) {
-      console.error('Error deleting goal:', error); // Log error
+      console.error('Error deleting goal:', error);
     }
   };
 
-  const makeDeposit = async (goalId, amount) => { // Make deposit
+  // Make a deposit to a specific goal
+  const makeDeposit = async (goalId, amount) => {
     try {
-      const goalToUpdate = goals.find(g => g.id === goalId); // Find goal
-      const updatedGoal = { // Create updated goal
+      const goalToUpdate = goals.find(g => g.id === goalId);
+      const updatedGoal = {
         ...goalToUpdate,
-        savedAmount: goalToUpdate.savedAmount + amount // Add deposit
+        savedAmount: goalToUpdate.savedAmount + amount
       };
-      await updateGoal(updatedGoal); // Call update
+      
+      await updateGoal(updatedGoal);
     } catch (error) {
-      console.error('Error making deposit:', error); // Log error
+      console.error('Error making deposit:', error);
     }
   };
 
-  return ( // Render UI
-    <div className="app-container"> {/* Main container */}
-      <h1>Smart Goal Planner</h1> {/* Title */}
+  return (
+    <div className="app-container">
+      <h1>Smart Goal Planner</h1>
       
       {/* Navigation Tabs */}
       <div className="tabs">
-        <button // Goals tab button
+        <button 
           className={activeTab === 'goals' ? 'active' : ''}
           onClick={() => setActiveTab('goals')}
         >
           My Goals
         </button>
-        <button // Overview tab button
+        <button 
           className={activeTab === 'overview' ? 'active' : ''}
           onClick={() => setActiveTab('overview')}
         >
@@ -91,22 +98,22 @@ function App() {
         </button>
       </div>
       
-      {/* Main Content */}
-      {activeTab === 'goals' ? ( // Conditional render
-        <div className="goals-section"> {/* Goals section */}
-          <GoalForm onAddGoal={addGoal} /> {/* Goal form */}
-          <DepositForm goals={goals} onMakeDeposit={makeDeposit} /> {/* Deposit form */}
-          <GoalsList // Goals list
+      {/* Main Content Area */}
+      {activeTab === 'goals' ? (
+        <div className="goals-section">
+          <GoalForm onAddGoal={addGoal} />
+          <DepositForm goals={goals} onMakeDeposit={makeDeposit} />
+          <GoalsList 
             goals={goals} 
             onUpdateGoal={updateGoal} 
             onDeleteGoal={deleteGoal} 
           />
         </div>
       ) : (
-        <Overview goals={goals} /> {/* Overview section */}
+        <Overview goals={goals} />
       )}
     </div>
   );
 }
 
-export default App; // Export component
+export default App;
