@@ -43,7 +43,7 @@ function Overview({ goals }) {
         
         <div className="summary-card">
           <h3>Total Saved</h3>
-          <p>${totalSaved.toLocaleString()}</p>
+          <p>sh.{totalSaved.toLocaleString()}</p>
         </div>
         
         <div className="summary-card">
@@ -55,7 +55,7 @@ function Overview({ goals }) {
       
       {urgentGoals.length > 0 && (
         <div className="urgent-section">
-          <h3>⚠️ Urgent Goals</h3>
+          <h3>Urgent Goals</h3>
           <div className="urgent-goals-list">
             {urgentGoals.map(g => {
               const daysLeft = calculateDaysLeft(g.deadline);
@@ -100,7 +100,7 @@ function Overview({ goals }) {
                   <td>
                     <ProgressBar progress={progress} />
                   </td>
-                  <td>${g.savedAmount.toLocaleString()}</td>
+                  <td>sh.{g.savedAmount.toLocaleString()}</td>
                   <td>{new Date(g.deadline).toLocaleDateString()}</td>
                   <td className={`status ${status.toLowerCase().replace(' ', '-')}`}>
                     {status}

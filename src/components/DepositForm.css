@@ -1,47 +1,70 @@
 /* DepositForm.css */
 .deposit-form-container {
-  background-color: rgb(128, 234, 245);
-  padding: 1.5rem;
+  background:  #5daddc;
+  padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
+  max-width: 600px;
 }
 
 .deposit-form-container h2 {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  color: #2c3e50;
-  font-size: 1.3rem;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
 }
 
 .deposit-form-container form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+.deposit-form-group {
+  margin-bottom: 1rem;
+}
+
+.deposit-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.deposit-form-group input,
+.deposit-form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #222; /* Dark text for user input */
+}
+
+/* Placeholder styling - light gray */
+.deposit-form-group input::placeholder {
+  color: #999;
+  opacity: 1; /* Ensure full visibility */
+}
+
+.deposit-form-group select option:first-child {
+  color: #999; /* Style the default select option */
+}
+
+.deposit-form-group input:focus,
+.deposit-form-group select:focus {
+  outline: none;
+  border-color: #4a90e2;
 }
 
 .deposit-form-container button {
-  grid-column: span 2;
-  padding: 0.8rem;
-  background-color: #2196F3;
+  width: 100%;
+  padding: 0.9rem;
+  background: #4a90e2;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
+  margin-top: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.deposit-form-container button:hover {
-  background-color: #1976d2;
-}
-
-@media (max-width: 768px) {
-  .deposit-form-container form {
-    grid-template-columns: 1fr;
-  }
-  
-  .deposit-form-container button {
-    grid-column: span 1;
-  }
 }

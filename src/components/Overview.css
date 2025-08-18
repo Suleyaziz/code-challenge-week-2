@@ -1,7 +1,7 @@
 /* Overview.css */
 .overview-container {
   padding: 1.5rem;
-  background-color: #f1f9fa;
+  background:  #5daddc;
   border-radius: 10px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .summary-card {
-  background-color: white;
+  background:  #94cff1;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -42,7 +42,7 @@
 }
 
 .urgent-section {
-  background-color: white;
+  background:  #5daddc;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -83,7 +83,7 @@
 }
 
 .all-goals-progress {
-  background-color: white;
+  background:  #5daddc;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);

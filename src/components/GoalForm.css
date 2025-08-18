@@ -1,23 +1,24 @@
 /* GoalForm.css */
 .goal-form-container {
-  background-color: rgb(93, 147, 248);
-  padding: 1.5rem;
+  background:  #5daddc;
+  padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
+  max-width: 600px;
+  box-shadow: #4a90e2;
 }
 
 .goal-form-container h2 {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  color: #2c3e50;
-  font-size: 1.3rem;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
 }
 
 .goal-form-container form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
 }
 
 .form-group {
@@ -27,48 +28,44 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  font-size: 0.9rem;
   color: #555;
+  font-size: 0.95rem;
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
-  padding: 0.7rem;
+  padding: 0.8rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
+  color: #fff; /* Dark text for user input */
+}
+
+/* Placeholder styling - light gray */
+.form-group input::placeholder {
+  color: #999;
+  opacity: 1; /* Ensure full visibility */
+}
+
+.form-group select option:first-child {
+  color: #999; /* Style the default select option */
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #1976d2;
-  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+  border-color: #4a90e2;
 }
 
 .goal-form-container button {
-  grid-column: span 2;
-  padding: 0.8rem;
-  background-color: #4CAF50;
+  width: 100%;
+  padding: 0.9rem;
+  background: #4a90e2;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
+  margin-top: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.goal-form-container button:hover {
-  background-color: #3e8e41;
-}
-
-@media (max-width: 768px) {
-  .goal-form-container form {
-    grid-template-columns: 1fr;
-  }
-  
-  .goal-form-container button {
-    grid-column: span 1;
-  }
 }
