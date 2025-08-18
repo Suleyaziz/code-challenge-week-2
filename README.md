@@ -1,12 +1,60 @@
-# React + Vite
+# Smart Goal Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application for managing and tracking financial savings goals with data persistence using `db.json` and `json-server`.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Data Management & Persistence**
+  - All goal data stored in `db.json`
+  - `json-server` provides REST API endpoints for CRUD operations
+  - Initial goals fetched from `db.json` on app load
 
-## Expanding the ESLint configuration
+- **Multiple Savings Goals (CRUD Operations)**
+  - Create: Add new financial goals (POST)
+  - Read: View all goals
+  - Update: Modify goal name, target amount, category, or deadline (PUT/PATCH)
+  - Delete: Remove goals (DELETE)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Progress Tracking**
+  - Display total saved vs. target amount for each goal
+  - Show remaining amount needed
+  - Visual progress bar per goal
+
+- **Deposit Management**
+  - Add deposits to specific goals
+  - Update savedAmount via PATCH requests
+  - Automatic progress recalculation
+
+- **Overview Dashboard**
+  - Total number of goals
+  - Total money saved across all goals
+  - Completed goals tracking
+  - Time remaining for each goal
+  - Warning for deadlines within 30 days
+  - Overdue status for missed deadlines
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Suleyaziz/code-challenge-week-2
+   cd code-challenge-week-2
+2. Install and watch db.json server
+    ```bash
+    npm install -g json-server
+    json-server --watch db.json
+3. Start the server
+   ```bash
+   npm start
+4. Start Vite
+   ```bash
+   npm run dev
+   ## Author
+
+**Suleiman Aziz**  
+Email: [suleimanaziz212@gmail.com](mailto:suleimanaziz212@gmail.com)
+
+## License
+
+**MIT License**  
+See [LICENSE](LICENSE) file for details.
