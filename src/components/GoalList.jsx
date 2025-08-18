@@ -20,13 +20,13 @@ function GoalsList({ goals, onUpdateGoal, onDeleteGoal }) { // Main component wi
   };
 
   return (
-    <div className="goals-list"> // Main container
-      <h2>My Savings Goals</h2> // Section title
+    <div className="goals-list">
+      <h2>My Savings Goals</h2> 
       
       {goals.length === 0 ? ( // Conditional render for empty state
         <p className="no-goals">No goals yet. Add your first savings goal!</p> // Empty message
       ) : (
-        <div className="goals-grid"> // Goals container
+        <div className="goals-grid">
           {goals.map(goal => ( // Map through goals
             <GoalCard // Render GoalCard for each goal
               key={goal.id} // Unique key

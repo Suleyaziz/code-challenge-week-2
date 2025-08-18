@@ -5,7 +5,6 @@ import './GoalCard.css';
 // GoalCard component that receives multiple props including goal data and handler functions
 function GoalCard({ goal, statusInfo, isEditing, onEdit, onSave, onCancel, onDelete }) {
   return (
-    // Main container div with dynamic class based on status (completed/overdue/urgent)
     <div className={`goal-card ${statusInfo.status}`}>
       {/* Conditional rendering - show EditForm when in editing mode */}
       {isEditing ? (
