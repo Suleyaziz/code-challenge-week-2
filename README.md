@@ -57,4 +57,4 @@ Email: [suleimanaziz212@gmail.com](mailto:suleimanaziz212@gmail.com)
 ## License
 
 **MIT License**  
-See [LICENSE](LICENSE) file for details.
+MIT
