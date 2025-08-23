@@ -32,18 +32,20 @@
   font-size: 0.95rem;
 }
 
-.form-group input,
+.form-group input ,
 .form-group select {
+  background: #fcfcfc;
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ddd;
+  border: 1px solid #0f0000;
   border-radius: 6px;
   font-size: 1rem;
-  color: #fff; /* Dark text for user input */
+  color: #060000; /* Dark text for user input */
 }
 
 /* Placeholder styling - light gray */
 .form-group input::placeholder {
+  
   color: #999;
   opacity: 1; /* Ensure full visibility */
 }
